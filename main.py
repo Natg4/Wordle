@@ -42,20 +42,7 @@ class wordle:
         while tentative != self.mot:
             tentative=f.split(f.fonction_mot_test())
         
-            for i in range(len(tentative)):
-                if tentative[i] in self.mot and tentative[i] != self.mot[i] :
-                    if not(tentative[i] in self.yellow[i]):
-                            self.yellow[i].append(tentative[i])
-                            
-                    
-                    
-                elif tentative[i] == self.mot[i] :
-                        self.green[i] = tentative[i]
-                        
-                    
-                else : 
-                    if tentative[i] not in self.grey:
-                        self.grey.append(tentative[i])
+            self.essai(tentative)
                         
             if self.green != f.split(self.mot) :
                 print("Green list :",self.green)
@@ -102,6 +89,7 @@ class wordle:
                     
                 
             else : 
+                if essai[i] not in self.grey:
                     self.grey.append(essai[i])
     
     def iadebase(self):
@@ -180,7 +168,8 @@ class wordle:
 
 
         
-
+test=wordle()
+test.jouer()
             
         
         
